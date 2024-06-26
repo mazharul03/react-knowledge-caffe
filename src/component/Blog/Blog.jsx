@@ -2,7 +2,8 @@ import PropTypes from 'prop-types';
 import { PiBookmarkSimpleFill } from "react-icons/pi";
 
 const Blog = ({ blog, handleAddToBookmark, handleMarkAsRead }) => {
-    const { title, cover, author, author_img, posted_date, reading_time, hashtags } = blog;
+    const { Id, title, cover, author, author_img, posted_date, reading_time, hashtags } = blog;
+    console.log(Id)
     return (
         <div className='mb-8 space-y-4'>
             <img className='w-full mb-8 mt-3 h-96 rounded-md' src={cover} alt={`Cover picture of the title ${title}`} />
@@ -31,7 +32,7 @@ const Blog = ({ blog, handleAddToBookmark, handleMarkAsRead }) => {
                 }
             </p>
             <button
-                onClick={() => handleMarkAsRead(reading_time)}
+                onClick={() => handleMarkAsRead(Id, reading_time)}
                 className='text-purple-800 font-bold underline'
             >
                 Mark As Read
